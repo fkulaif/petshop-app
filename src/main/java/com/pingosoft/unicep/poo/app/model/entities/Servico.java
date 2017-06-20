@@ -6,29 +6,45 @@ public class Servico {
 	private Tosa tosa;
 	private boolean desembolo;
 	private boolean tosaHigienica;
-	
-	public boolean isBanhoSimples() {
-		return banhoSimples;
+
+	public int getId() {
+		return this.id;
 	}
-	public void setBanhoSimples(boolean banhoSimples) {
-		this.banhoSimples = banhoSimples;
+
+	public void setId(int id) {
+		this.id = id;
 	}
-	public boolean isBanhoMedicamentoso() {
-		return banhoMedicamentoso;
+
+	public Banho getBanho() {
+		return this.banho;
 	}
-	public void setBanhoMedicamentoso(boolean banhoMedicamentoso) {
-		this.banhoMedicamentoso = banhoMedicamentoso;
+
+	public void setBanho(Banho banho) {
+		this.banho = banho;
 	}
+
+	public Tosa getTosa() {
+		return this.tosa;
+	}
+
+	public void setTosa(Tosa tosa) {
+		this.tosa = tosa;
+	}
+
 	public boolean isDesembolo() {
-		return desembolo;
+		return this.desembolo;
 	}
+
 	public void setDesembolo(boolean desembolo) {
 		this.desembolo = desembolo;
 	}
+
 	public boolean isTosaHigienica() {
-		return tosaHigienica;
+		return this.tosaHigienica;
 	}
+
 	public void setTosaHigienica(boolean tosaHigienica) {
 		this.tosaHigienica = tosaHigienica;
 	}
+
 }

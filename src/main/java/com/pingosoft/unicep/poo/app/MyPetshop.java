@@ -25,6 +25,7 @@ public class MyPetshop {
 		app.greet();
 		TelaCadastro telaCadastro = new TelaCadastro();
 		telaCadastro.cabecalhoSistema();
+		telaCadastro.menuCadastro();
 	}
 
 	public void greet() {
