@@ -25,7 +25,7 @@ public class OrdemServico { // id_ordem data_ordem total_ordem id_dono
 
 	public void criarOrdem() {
 		OrdemServico os = new OrdemServico();
-		Usuario usuario = new Usuario("adm", "123", "456", "adm", "adm", "adm");
+		//Usuario usuario = new Usuario(id, nome, cpf, rg, listaPessoa, login, senha, cargo)
 		// os.servico = ;
 	}
 

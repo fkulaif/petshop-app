@@ -1,9 +1,8 @@
 package com.pingosoft.unicep.poo.app.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class Pessoa {
+public abstract class Pessoa {
 	private int id;
 	private String nome;
 	private String cpf;
@@ -16,11 +15,11 @@ public class Pessoa {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.rg = rg;
-		// this.listaPessoa = listaPessoa;
-		this.listaPessoa = new ArrayList<>();
+		this.listaPessoa = listaPessoa;
+		// this.listaPessoa = new ArrayList<>();
 	}
 
-	public boolean salvarPessoa(Pessoa p) {
+	public boolean salvar(Pessoa p) {
 		try {
 			this.listaPessoa.add(p);
 		} catch (Exception e) {

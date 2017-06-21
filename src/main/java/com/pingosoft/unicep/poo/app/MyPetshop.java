@@ -2,9 +2,9 @@ package com.pingosoft.unicep.poo.app;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import com.pingosoft.unicep.poo.app.cadastros.TelaCadastro;
-import com.pingosoft.unicep.poo.app.model.entities.Usuario;
 
 /**
  * Projeto: "Aplicação Java com POO" para disciplina Programação Orientada a
@@ -24,11 +24,28 @@ public class MyPetshop {
 		System.out.println("Iniciando a Aplicação...");
 		MyPetshop app = new MyPetshop();
 		app.greet();
-		TelaCadastro telaCadastro = new TelaCadastro();
-		telaCadastro.cabecalhoSistema();
-		telaCadastro.menuCadastro();
-		Usuario usuario = new Usuario(id, nome, cpf, rg, listaPessoa, login, senha, cargo);
-		telaCadastro.menuUsuario();
+
+		Scanner infoUsuario = new Scanner(System.in);
+		System.out.println("\n## Sign in ##");
+		System.out.println("login: ");
+		String login = infoUsuario.nextLine();
+		System.out.println("\nsenha: ");
+		String senha = infoUsuario.nextLine();
+
+		if(login == "admin" && senha == "admin") {
+			TelaCadastro telaCadastro = new TelaCadastro();
+			telaCadastro.cabecalhoSistema();
+			telaCadastro.menuCadastro();
+			System.out.println("ENTRANDO...");
+		} else
+			// System.err.println("credenciais de usuario incorretas");
+			System.out.println("credenciais de usuario incorretas");
+		/**
+		 * Sign Up shortcut Usuario usuario = new Usuario(id, nome, cpf, rg,
+		 * listaPessoa, login, senha, cargo) telaCadastro.menuUsuario();
+		 * 
+		 */
+
 	}
 
 	public void greet() {
