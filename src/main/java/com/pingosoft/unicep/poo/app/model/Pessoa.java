@@ -1,5 +1,6 @@
 package com.pingosoft.unicep.poo.app.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pessoa {
@@ -9,12 +10,34 @@ public class Pessoa {
 	private String rg;
 	private List<Pessoa> listaPessoa;
 
-	public boolean criar(Pessoa p) {
-		return false;
+	public Pessoa(int id, String nome, String cpf, String rg, List<Pessoa> listaPessoa) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.cpf = cpf;
+		this.rg = rg;
+		// this.listaPessoa = listaPessoa;
+		this.listaPessoa = new ArrayList<>();
+	}
+
+	public boolean salvarPessoa(Pessoa p) {
+		try {
+			this.listaPessoa.add(p);
+		} catch (Exception e) {
+			System.err.println("Caught Exception: " + e.getMessage());
+			return false;
+		}
+		return true;
 	}
 
 	public boolean deletar(Pessoa p) {
-		return false;
+		try {
+			this.listaPessoa.remove(p);
+		} catch (Exception e) {
+			System.err.println("Caught Exception: " + e.getMessage());
+			return false;
+		}
+		return true;
 	}
 
 	public List<Pessoa> listar() {
@@ -55,6 +78,12 @@ public class Pessoa {
 
 	public void setRg(String rg) {
 		this.rg = rg;
+	}
+
+	@Override
+	public String toString() {
+		return "Pessoa [id=" + this.id + ", nome=" + this.nome + ", cpf=" + this.cpf + ", rg=" + this.rg
+				+ ", listaPessoa=" + this.listaPessoa + "]";
 	}
 
 }

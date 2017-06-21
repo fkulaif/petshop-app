@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.pingosoft.unicep.poo.app.cadastros.TelaCadastro;
+import com.pingosoft.unicep.poo.app.model.entities.Usuario;
 
 /**
  * Projeto: "Aplicação Java com POO" para disciplina Programação Orientada a
  * Objetos (POO) Profa. Tatiana de Alencar - Engenharia da Computação Aluno:
- * Fernando do Amaral Kulaif - RA: 5600144 Gestão em T.I. (Aproveitamento de
+ * Fernando do A. Kulaif - RA: 5600144 Gestão em T.I. (Aproveitamento de
  * disciplinas) Coordenador do Curso de Gestão em Tecnologia de Informação. -
  * Prof.Wellington Gouveia
  */
@@ -26,6 +27,8 @@ public class MyPetshop {
 		TelaCadastro telaCadastro = new TelaCadastro();
 		telaCadastro.cabecalhoSistema();
 		telaCadastro.menuCadastro();
+		Usuario usuario = new Usuario(id, nome, cpf, rg, listaPessoa, login, senha, cargo);
+		telaCadastro.menuUsuario();
 	}
 
 	public void greet() {

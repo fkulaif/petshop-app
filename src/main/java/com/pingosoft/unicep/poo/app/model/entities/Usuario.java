@@ -12,18 +12,15 @@ public class Usuario extends Pessoa { // id nome cpf rg
 	private String senha;
 	private String cargo;
 
-	public Usuario(String nome, String cpf, String rg, String login, String senha, String cargo) {
-		super();
-		// super.nome = nome; // usuario.setNome(nome);
-		// super.cpf = cpf;
-		// super.rg = rg;
+	public Usuario(int id, String nome, String cpf, String rg, List<Pessoa> listaPessoa, String login, String senha,
+			String cargo) {
+		super(id, nome, cpf, rg, listaPessoa);
 		this.login = login;
 		this.senha = senha;
 		this.cargo = cargo;
 	}
 
 	public static void main(String[] args) {
-
 		Scanner l = new Scanner(System.in);
 		System.out.println("CADASTRO DE USUÁRIOS");
 		System.out.println("Digite os dados: " + "\nNome: ");
@@ -34,33 +31,33 @@ public class Usuario extends Pessoa { // id nome cpf rg
 		String cargo = l.nextLine();
 		System.out.println("Senha de acesso:");
 		int senha = l.nextInt();
-
 	}
 
+	// @Override
 	// public void nome(String nome) {
 	// this.nome = nome;
 	// }
-	//
-	// @Override
-	// public String getNome() {
-	// return this.nome;
-	// }
-	//
-	// public void setCPF(String cpf) {
-	// this.cpf = cpf;
-	// }
-	//
-	// public String getCPF() {
-	// return this.cpf;
-	// }
-	//
-	// public void setRG(String rg) {
-	// this.rg = rg;
-	// }
-	//
-	// public String getRG() {
-	// return this.rg;
-	// }
+
+	@Override
+	public String getNome() {
+		return this.nome;
+	}
+
+	public void setCPF(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getCPF() {
+		return this.cpf;
+	}
+
+	public void setRG(String rg) {
+		this.rg = rg;
+	}
+
+	public String getRG() {
+		return this.rg;
+	}
 
 	public String getLogin() {
 		return this.login;
@@ -87,10 +84,10 @@ public class Usuario extends Pessoa { // id nome cpf rg
 	}
 
 	@Override
-	boolean salvarPessoa() {
+	public boolean salvarPessoa(Pessoa p) {
 		DadosUsuario usuario;
 		usuario = new DadosUsuario();
-		usuario.setNome(this.nome);
+		usuario.setNome(this.getNome());
 		usuario.setLogin(this.login);
 		usuario.setCargo(this.cargo);
 		ArrayList<DadosUsuario> usuarios = new ArrayList<DadosUsuario>();

@@ -1,5 +1,7 @@
 package com.pingosoft.unicep.poo.app.model.entities;
 
+import java.util.List;
+
 import com.pingosoft.unicep.poo.app.model.Pessoa;
 
 public class Dono extends Pessoa {
@@ -9,14 +11,9 @@ public class Dono extends Pessoa {
 	// private List<Dono> listaDono;
 	// private double cash;
 
-	public Dono() {
-	}
-
-	public Dono(String nome, String cpf, String rg, Endereco endereco, Cachorro cachorro) {
-		super();
-		super.setNome(nome);
-		super.setCpf(cpf);
-		super.setRg(rg);
+	public Dono(int id, String nome, String cpf, String rg, List<Pessoa> listaPessoa, Endereco endereco,
+			Cachorro cachorro) {
+		super(id, nome, cpf, rg, listaPessoa);
 		this.endereco = endereco;
 		this.cachorro = cachorro;
 	}

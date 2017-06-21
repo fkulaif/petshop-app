@@ -40,7 +40,8 @@ public class TelaCadastro {
 		System.out.println("2 - Cadastro de Dono");
 		System.out.println("3 - Cadastro de Cachorro");
 		System.out.println("4 - Cadastro de Serviço");
-		System.out.println("5 - Sair");
+		System.out.println("5 - Cadastro de Usuário");
+		System.out.println("0 - Sair");
 		return this.l.nextLine();
 	}
 
@@ -69,6 +70,14 @@ public class TelaCadastro {
 	}
 
 	public String menuServico() {
+		System.out.println("Selecione a opção:");
+		System.out.println("N - Novo cadastro");
+		System.out.println("L - Listar cadastros");
+		System.out.println("X - Sair");
+		return this.l.nextLine();
+	}
+
+	public String menuUsuario() {
 		System.out.println("Selecione a opção:");
 		System.out.println("N - Novo cadastro");
 		System.out.println("L - Listar cadastros");
