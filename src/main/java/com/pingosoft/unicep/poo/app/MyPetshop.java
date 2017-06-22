@@ -32,7 +32,7 @@ public class MyPetshop {
 		System.out.println("\nsenha: ");
 		String senha = infoUsuario.nextLine();
 
-		if(login == "admin" && senha == "admin") {
+		if(login.contains("admin") && senha.contains("admin")) {
 			TelaCadastro telaCadastro = new TelaCadastro();
 			telaCadastro.cabecalhoSistema();
 			telaCadastro.menuCadastro();
